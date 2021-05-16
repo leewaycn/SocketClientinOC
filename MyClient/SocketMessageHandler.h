@@ -11,7 +11,9 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
-NS_ASSUME_NONNULL_BEGIN
+
+
+#import "SocketPacketData.h"
 
 @interface SocketMessageHandler : NSObject
 {
@@ -20,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 -(void)addOp:(NSString*)op func:(NSString*)func;
--(void)OnPacketArrived:(NSString*)packet;
+-(void)OnPacketArrived:(SocketPacketData*)packet;
 
 
 @end
 
-NS_ASSUME_NONNULL_END
+ 

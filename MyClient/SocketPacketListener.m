@@ -10,4 +10,16 @@
 
 @implementation SocketPacketListener
 
+
+
+
+-(void)SetPacketLisnter:(SocketMessageHandler*)handler{
+    m_handler = handler;
+}
+
+-(void)OnPacketArrived:(SocketPacketData*)packet{
+    [m_handler OnPacketArrived:packet];
+}
+
+
 @end

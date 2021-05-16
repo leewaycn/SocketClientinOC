@@ -33,6 +33,11 @@
     @public
     int m_row;
    int m_col;
+    NSMutableDictionary *m_map;
+    NSMutableArray *m_array;
+    NSString *INVALID_STRING_VAL;
+    
+    
     @private
     BOOL m_bResult;
     int m_magic;
@@ -41,10 +46,10 @@
     int m_param;
     
 }
-@property (nonatomic, strong) NSMutableDictionary *m_map;
-@property (nonatomic, strong) NSMutableArray *m_array;
-@property (nonatomic, strong) NSString *INVALID_STRING_VAL;
-@property (nonatomic, strong) NSMutableArray< NSArray*> * m_byte_buf;
+
+
+
+@property (nonatomic, strong) NSMutableArray<NSData*>  * m_byte_buf;
 
 
 
@@ -64,6 +69,7 @@
 -(int)getParam;
 -(void)MakeTestPacket:(int)param;
 
+-(void)MakeLoginPacket:(int)param;
 -(void)MakeQueryCommandPacket:(int)param;
 -(void)ShowPacket;
 -(void)setPacketHeadLen:(int)len;
@@ -71,6 +77,8 @@
 -(void)DeserializeHead:(SocketPacketHead*)packet_head;
 -(void)SerializeBody:(SocketByteBuffer*)buf;
 -(void)DeserializeBody:(SocketByteBuffer*)buf;
+
+-(void)addMapElement:(NSString*)key :(NSString*)val;
 -(NSString*)getMapString:(NSString*)key;
 -(BOOL)ContainKey:(NSString*)key;
 -(int)getMapSize;

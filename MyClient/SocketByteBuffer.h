@@ -61,6 +61,10 @@ static int BUF_LEN = 1024*10*10;
 -(int)putString:(NSString*)str;
 -(NSString*)getString;
 
+-(void)putByteArray:(Byte*)s len:(NSInteger)len;
+-(Byte *)getByteArray;
+
+
 -(int)CheckWriteValid:(int)len;
 -(int)CheckReadValid:(int)len;
 
